@@ -17,7 +17,10 @@
         android:theme="@style/Theme.ApplicationMobileTps"
         tools:targetApi="31">
         <activity
-            android:name=".Tp1andTp2"
+            android:name=".Tp1_with_Tp2"
+            android:exported="false" />
+        <activity
+            android:name=".Tp3_with_Tp4"
             android:exported="false" />
         <activity
             android:name=".Tp6"

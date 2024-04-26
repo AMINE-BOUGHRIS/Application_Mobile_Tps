@@ -13,6 +13,7 @@ public class Tp4 extends AppCompatActivity {
 
     private EditText firstName, lastName;
     private MySQLiteHelper dbHelper;
+    int currentRow = -1;
 
 
     @Override
@@ -24,27 +25,27 @@ public class Tp4 extends AppCompatActivity {
         Button retrieveBtn = findViewById(R.id.recived); // Assuming a button for retrieval
 
         dbHelper = new MySQLiteHelper(this);
-        final int[] currentRow = {-1}; // Initialize to -1 (no data retrieved yet)
+        // Initialize to -1 (no data retrieved yet)
 
         retrieveBtn.setOnClickListener(v -> {
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             Cursor cursor = db.query("Students", new String[]{"FirstName", "LastName"}, null, null, null, null, null);
 
             if (cursor.getCount() > 0) {
-                if (currentRow[0] == -1) {
+                if (currentRow == -1) {
                     // First click, move to the first row
                     cursor.moveToFirst();
-                    currentRow[0] = 0;
-                } else if (cursor.moveToPosition(currentRow[0] + 1)) {
+                    currentRow = 0;
+                } else if (cursor.moveToPosition(currentRow + 1)) {
                     // Subsequent clicks, move to the next row if possible
-                    currentRow[0]++;
+                    currentRow++;
                 } else {
                     // Reached end of data
                     Toast.makeText(Tp4.this, "Reached end of data", Toast.LENGTH_SHORT).show();
-                    currentRow[0] = -1; // Reset for next retrieval from beginning
+                    currentRow = -1; // Reset for next retrieval from beginning
                 }
 
-                if (currentRow[0] != -1) {
+                if (currentRow != -1) {
                     // Data retrieved successfully, update fields and toast message
                     String fname = cursor.getString(0);
                     String lname = cursor.getString(1);

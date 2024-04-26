@@ -1,9 +1,8 @@
 package com.example.applicationmobiletps;
-import android.annotation.SuppressLint;
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +25,7 @@ public class Tp6 extends AppCompatActivity {
         button = findViewById(R.id.test);
 
         button.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SuspiciousIndentation")
+
             @Override
             public void onClick(View v) {
                 // Récupérer le débit de réseaux mobiles
@@ -44,11 +43,11 @@ public class Tp6 extends AppCompatActivity {
     private String getMobileNetworkSpeed() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm != null) {
-                NetworkCapabilities nc = cm.getNetworkCapabilities(cm.getActiveNetwork());
-                if (nc != null) {
-                    double downSpeed = nc.getLinkDownstreamBandwidthKbps()/1024;
-                    return  String.format("%.2f Mbps",downSpeed);
-                }
+            NetworkCapabilities nc = cm.getNetworkCapabilities(cm.getActiveNetwork());
+            if (nc != null) {
+                double downSpeed = nc.getLinkDownstreamBandwidthKbps()/1024;
+                return  String.format("%.2f Mbps",downSpeed);
+            }
 
         }
         return "";

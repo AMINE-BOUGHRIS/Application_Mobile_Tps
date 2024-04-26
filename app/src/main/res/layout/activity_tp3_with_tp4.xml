@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tp3">
+
+    <EditText
+        android:id="@+id/firstname"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:hint="First name"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/firstname"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="-12dp"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:hint="Last name" />
+    <Button
+        android:id="@+id/insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lastname"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="@color/green"
+        android:text="Insert"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/recived"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/insert"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="@color/green"
+        android:text="Recived"
+        android:textSize="30dp" />
+    <Button
+        android:id="@+id/startover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recived"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="@color/green"
+        android:text="Start Over"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/currentbtn"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startover"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="188dp"
+        android:backgroundTint="@color/green"
+        android:gravity="center"
+        android:text="Current student:"
+        android:textSize="30dp" />
+    <Button
+        android:id="@+id/totalbtn"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currentbtn"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="188dp"
+        android:backgroundTint="@color/green"
+        android:gravity="center"
+        android:text="The total"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/currenttext"
+        android:layout_width="173dp"
+        android:layout_height="55dp"
+        android:layout_below="@id/startover"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:id="@+id/totaltext"
+        android:layout_width="173dp"
+        android:layout_height="55dp"
+        android:layout_below="@id/currenttext"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        />
+
+</RelativeLayout>
